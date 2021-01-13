@@ -30,19 +30,19 @@ describe('Block', () => {
     describe('mineBlock()', () => {
         const lastBlock = Block.genesis();
         const data = "mined data";
-        const minedBlock = Block.minedBlock({lastBlock,data});
+        const mineBlock = Block.mineBlock({lastBlock,data});
         //mined block needs to be a block
         it('returns a Block instance', () => {
-            expect(minedBlock instanceof Block).toBe(true);
+            expect(mineBlock instanceof Block).toBe(true);
         });
         it('sets lastHash to hash of lastBlock',()=>{
-            expect(minedBlock.lastHash).toEqual(lastBlock.hash);
+            expect(mineBlock.lastHash).toEqual(lastBlock.hash);
         });
         it('sets the data', () => {
-            expect(minedBlock.data).toEqual(data);
+            expect(mineBlock.data).toEqual(data);
         });
         it("sets time stamp",()=>{
-            expect(minedBlock.timestamp).not.toEqual(undefined);
+            expect(mineBlock.timestamp).not.toEqual(undefined);
         });
         
     });

@@ -9,7 +9,7 @@ class Block{
     static genesis(){
         return new Block(GENESIS_DATA);
     }
-    static minedBlock({lastBlock,data}){
+    static mineBlock({lastBlock,data}){
         return new this({
             timestamp:Date.now,
             lastHash: lastBlock.hash,
